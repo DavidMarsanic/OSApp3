@@ -87,6 +87,12 @@ export function Header() {
                   Sign In
                 </a>
               </Link>
+              <Link href="/sign-up" passHref>
+                <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-blue-500 border-blue-500 hover:border-blue-400 hover:text-blue-400">
+
+                  Sign Up
+                </a>
+              </Link>
             </div>
           )}
 
