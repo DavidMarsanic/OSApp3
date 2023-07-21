@@ -3,6 +3,8 @@ import UnauthenticatedLayout from '@/layouts/UnauthenticatedLayout';
 import { useSignInEmailPassword } from '@nhost/react';
 import { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
+
 
 type SignInFormValues = {
   email: string;
@@ -12,6 +14,7 @@ type SignInFormValues = {
 export function SignInPage() {
   const { signInEmailPassword, isLoading, isError, error } =
     useSignInEmailPassword();
+  const router = useRouter();
 
   const { register, handleSubmit } = useForm<SignInFormValues>({
     reValidateMode: 'onSubmit',
