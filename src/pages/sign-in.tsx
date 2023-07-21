@@ -5,7 +5,6 @@ import { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 
-
 type SignInFormValues = {
   email: string;
   password: string;
@@ -27,7 +26,12 @@ export function SignInPage() {
   async function onSubmit(data: SignInFormValues) {
     const { email, password } = data;
 
-    await signInEmailPassword(email, password);
+    try {
+      await signInEmailPassword(email, password);
+      router.push('/');
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
