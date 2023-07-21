@@ -38,9 +38,9 @@ export function SignUpPage() {
     return (
         <div>
             {isSignUpSuccessful ? (
-                <div>
-                    <h2>Sign Up Successful</h2>
-                    <p>Please check your email for a verification link.</p>
+                <div className="w-full max-w-xs mx-auto">
+                    <h2 className="text-xl font-semibold text-white mb-6">Sign Up Successful!</h2>
+                    <p className="text-white">Please check your email for a verification link.</p>
                 </div>
             ) : (
                 <form
