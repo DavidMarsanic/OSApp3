@@ -88,7 +88,7 @@ export function Header() {
                 </a>
               </Link>
               <Link href="/sign-up" passHref>
-                <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-blue-500 border-blue-500 hover:border-blue-400 hover:text-blue-400">
+                <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
 
                   Sign Up
                 </a>
