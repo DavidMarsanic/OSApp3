@@ -1,25 +1,46 @@
 import BaseLayout from '@/layouts/BaseLayout';
 import { ReactElement } from 'react';
 import Link from 'next/link';
+import Footer from '@/components/common/Footer';
 
 function JoinPage() {
     return (
-        <div className="p-4 space-y-4 text-white">
-            <h1 className="text-2xl font-bold">Welcome to Our Open Source Platform</h1>
-            <h2 className="text-xl">Redefining the Way We Interact with Technology</h2>
+        <div className="p-4 space-y-8 text-white">
+            <div className="flex flex-col items-center space-y-4">
+                <h1 className="text-4xl font-bold mb-10 ">Become a Part of the Future</h1>
+                <h2 className="text-2xl">
+                    We are changing how software is made and used. Join us on this journey
+                </h2>
+                <div className="bg-hero bg-cover bg-purple-500 h-96 w-full rounded-md shadow-sm"></div>
+
+                <Link href="/sign-up">
+                    <a className="inline-block px-6 py-3 text-base font-medium text-center text-white transition-colors duration-200 bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-700 mt-4">
+                        Sign Up
+                    </a>
+                </Link>
+            </div>
 
             <div className="bg-hero bg-cover h-64 rounded-md shadow-sm"></div>
 
-            <h2 className="text-xl">Explore the Most Popular Apps</h2>
-            <div className="grid grid-cols-2 gap-4">
-                <p>Discover a wide range of popular apps, from productivity tools to fitness trackers, all in one place. With Open Source Platform, you have access to all the apps you need, without the hassle of navigating through multiple platforms.</p>
-                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+
+            <div className="my-8">
+                <h2 className="text-xl mb-4">Explore the Most Popular Apps</h2>
+                <div className="grid grid-cols-2 gap-4">
+                    <div className=" p-4 rounded-md shadow-sm">
+                        <p>Discover a wide range of popular apps, from productivity tools to fitness trackers, all in one place. With Open Source Platform, you have access to all the apps you need, without the hassle of navigating through multiple platforms.</p>
+                    </div>
+                    <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                </div>
             </div>
 
-            <h2 className="text-xl">No Ads - Unparalleled Privacy</h2>
-            <div className="grid grid-cols-2 gap-4">
-                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
-                <p>Our platform prioritizes your privacy. All apps are open source, which means you know exactly what you're running. There are no intrusive ads or trackers, and we don't sell your data. It's a level of privacy that's unparalleled elsewhere.</p>
+            <div className="my-8">
+                <h2 className="text-xl mb-4">No Ads - Unparalleled Privacy</h2>
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                    <div className=" p-4 rounded-md shadow-sm">
+                        <p>Our platform prioritizes your privacy. All apps are open source, which means you know exactly what you're running. There are no intrusive ads or trackers, and we don't sell your data. It's a level of privacy that's unparalleled elsewhere.</p>
+                    </div>
+                </div>
             </div>
 
             <h2 className="text-xl">Amazing Ease of Use</h2>
@@ -46,12 +67,21 @@ function JoinPage() {
                 <p>Whether you're a seasoned developer or just starting out, Open Source Platform provides unrivaled tools to help you create and share your work. Start your journey today.</p>
             </div>
 
-            <Link href="/sign-up">
-                <a className="inline-block px-4 py-2 mt-4 text-xs font-medium text-center text-white transition-colors duration-200 bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-700">
-                    Sign Up
-                </a>
-            </Link>
+            <div className="flex justify-center">
+                <Link href="/sign-up">
+                    <a className="inline-block px-4 py-2 mt-4 text-xs font-medium text-center text-white transition-colors duration-200 bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-700">
+                        Sign Up
+                    </a>
+                </Link>
+            </div>
+
+            <div className='mt-20'>
+                <Footer />
+
+            </div>
+
         </div>
+
     );
 }
 

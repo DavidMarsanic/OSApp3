@@ -13,7 +13,7 @@ export function Header() {
       <div className="flex flex-row max-w-5xl p-4 mx-auto place-content-between">
         <Link href="/" passHref>
           <a className="self-center font-medium text-white text-md hover:underline">
-            Conference Template
+            OSApp
           </a>
         </Link>
 

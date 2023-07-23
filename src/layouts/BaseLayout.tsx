@@ -2,6 +2,7 @@ import { Header } from '@/components/common/Header';
 import Head from 'next/head';
 import { DetailedHTMLProps, HTMLProps } from 'react';
 import { twMerge } from 'tailwind-merge';
+import Footer from '@/components/common/Footer';
 
 export interface BaseLayoutProps
   extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {
@@ -43,6 +44,8 @@ export default function BaseLayout({
         >
           {children}
         </main>
+
+
       </div>
     </div>
   );
