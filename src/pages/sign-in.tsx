@@ -1,7 +1,7 @@
 import { data } from '@/data/info';
 import UnauthenticatedLayout from '@/layouts/UnauthenticatedLayout';
 import { useSignInEmailPassword } from '@nhost/react';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 
@@ -11,9 +11,9 @@ type SignInFormValues = {
 };
 
 export function SignInPage() {
-  const { signInEmailPassword, isLoading, isError, error } =
-    useSignInEmailPassword();
+  const { signInEmailPassword, isLoading } = useSignInEmailPassword();
   const router = useRouter();
+  const [signInError, setSignInError] = useState(null);
 
   const { register, handleSubmit } = useForm<SignInFormValues>({
     reValidateMode: 'onSubmit',
@@ -31,6 +31,7 @@ export function SignInPage() {
       router.push('/');
     } catch (err) {
       console.error(err);
+      setSignInError(err.message);
     }
   }
 
@@ -96,10 +97,10 @@ export function SignInPage() {
         </div>
       </form>
 
-      {isError && (
+      {signInError && (
         <div className="w-full max-w-xs mx-auto">
           <p className="text-red font-medium text-red-500">
-            Error: {error.message}
+            Error: {signInError}
           </p>
         </div>
       )}
