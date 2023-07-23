@@ -7,11 +7,34 @@ import BaseLayout from '@/layouts/BaseLayout';
 import { getDatesInRange } from '@/utils/getDatesInRange';
 import { useConferenceBySlugQuery } from '@/utils/__generated__/graphql';
 import { ReactElement } from 'react';
+import { useAuthenticationStatus } from '@nhost/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 function IndexPage() {
+  const router = useRouter();
+  const { isAuthenticated } = useAuthenticationStatus();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/join');
+    }
+  }, [isAuthenticated, router]);
+
   const { data, status, error } = useConferenceBySlugQuery({
     slug: DEFAULT_CONFERENCE_SLUG,
   });
+
+  if (status === 'error' && error) {
+    return (
+      <p className="text-red-500">
+        {error instanceof Error
+          ? error.message
+          : 'Unknown error occurred. Please try again later.'}
+      </p>
+    );
+  }
+
 
   if (status === 'error' && error) {
     return (

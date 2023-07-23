@@ -36,7 +36,10 @@ export function SignInPage() {
   }
 
   return (
-    <div>
+    <UnauthenticatedLayout
+      mainContainerProps={{ className: 'py-20' }}
+      title={data.pageTitle}
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="grid w-full max-w-xs grid-flow-row gap-6 py-8 mx-auto rounded-md"
@@ -104,17 +107,6 @@ export function SignInPage() {
           </p>
         </div>
       )}
-    </div>
-  );
-}
-
-SignInPage.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <UnauthenticatedLayout
-      mainContainerProps={{ className: 'py-20' }}
-      title={data.pageTitle}
-    >
-      {page}
     </UnauthenticatedLayout>
   );
 };
