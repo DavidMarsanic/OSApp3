@@ -1,101 +1,62 @@
-import { Loader } from '@/components/common/Loader';
-import { Day } from '@/components/conferences/Day';
-import { SubscribeToConference } from '@/components/conferences/SubscribeToConference';
-import { DEFAULT_CONFERENCE_SLUG } from '@/data/constants';
-import { data } from '@/data/info';
 import BaseLayout from '@/layouts/BaseLayout';
-import { getDatesInRange } from '@/utils/getDatesInRange';
-import { useConferenceBySlugQuery } from '@/utils/__generated__/graphql';
-import Link from 'next/link';
 import { ReactElement } from 'react';
+import Link from 'next/link';
 
 function JoinPage() {
-    const { data, status, error } = useConferenceBySlugQuery({
-        slug: DEFAULT_CONFERENCE_SLUG,
-    });
-
-    if (status === 'error' && error) {
-        return (
-            <p className="text-red-500">
-                {error instanceof Error
-                    ? error.message
-                    : 'Unknown error occurred. Please try again later.'}
-            </p>
-        );
-    }
-
-    if (status === 'loading') {
-        return (
-            <p className="grid justify-start grid-flow-col gap-1">
-                <Loader /> Loading conference...
-            </p>
-        );
-    }
-
-    const [conference] = data?.conferences;
-
-    if (!conference) {
-        return null;
-    }
-
     return (
-        <>
-            <div className="grid grid-flow-row gap-2 py-4 text-center sm:py-8">
-                <h1 className="text-dim text-[44px] sm:text-[68px] font-semibold leading-tight drop-shadow-sm">
-                    <span className="stroke">
-                        {conference.name.substring(0, conference.name.lastIndexOf(' '))}
-                    </span>{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-pink-700">
-                        {conference.name.split(' ').splice(-1)}
-                    </span>
-                </h1>
+        <div className="p-4 space-y-4 text-white">
+            <h1 className="text-2xl font-bold">Welcome to Our Open Source Platform</h1>
+            <h2 className="text-xl">Redefining the Way We Interact with Technology</h2>
 
-                <div className="max-w-sm mx-auto space-y-1 text-center">
-                    <p> {conference.location}</p>
-                    <p className="text-center text-list">
-                        {`${new Date(conference.start_date).toDateString()} to 
-              ${new Date(conference.end_date).toDateString()}`}
-                    </p>
-                </div>
+            <div className="bg-hero bg-cover h-64 rounded-md shadow-sm"></div>
 
-                <SubscribeToConference conferenceId={conference.id} />
+            <h2 className="text-xl">Explore the Most Popular Apps</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <p>Discover a wide range of popular apps, from productivity tools to fitness trackers, all in one place. With Open Source Platform, you have access to all the apps you need, without the hassle of navigating through multiple platforms.</p>
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
             </div>
 
-            <div className="flex flex-col max-w-4xl mx-auto">
-                <div className="flex flex-col py-2 text-center">
-                    <div className="grid grid-cols-1 gap-4 py-5 md:grid-cols-3 gap-y-12 place-content-between">
-                        {getDatesInRange(conference.start_date, conference.end_date).map(
-                            (day, index) => (
-                                <Day
-                                    key={day.getUTCDay()}
-                                    dayNumber={index + 1}
-                                    talks={
-                                        conference.talks.filter(
-                                            (talk) =>
-                                                new Date(talk.start_date).getUTCDay() ===
-                                                day.getUTCDay(),
-                                        ) || []
-                                    }
-                                />
-                            ),
-                        )}
-                    </div>
-                </div>
+            <h2 className="text-xl">No Ads - Unparalleled Privacy</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                <p>Our platform prioritizes your privacy. All apps are open source, which means you know exactly what you're running. There are no intrusive ads or trackers, and we don't sell your data. It's a level of privacy that's unparalleled elsewhere.</p>
             </div>
 
-            <div className="flex justify-center mt-4">
-                <Link href="/sign-up" passHref>
-                    <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
-                        Sign Up
-                    </a>
-                </Link>
+            <h2 className="text-xl">Amazing Ease of Use</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <p>Unlike other open source platforms, our apps are incredibly user-friendly. Running an app is as easy as clicking a button. No need for complex setup processes or technical know-how. It's open source made easy.</p>
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
             </div>
-        </>
+
+            <h2 className="text-xl">Your Apps, Your Rules</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                <p>With Open Source Platform, you have the ultimate freedom. Want to modify an app to better suit your needs? Go ahead. With our in-browser code editor, you can customize your experience to your heart's content.</p>
+            </div>
+
+            <h2 className="text-xl">Community Like Nowhere Else</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <p>Join a community of developers and users who are passionate about open source. Get support, request tailor-made features, help others, and earn rewards. It's a collaborative environment like nowhere else.</p>
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+            </div>
+
+            <h2 className="text-xl">Get Started as a Developer or Designer</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                <p>Whether you're a seasoned developer or just starting out, Open Source Platform provides unrivaled tools to help you create and share your work. Start your journey today.</p>
+            </div>
+
+            <Link href="/sign-up">
+                <a className="inline-block px-4 py-2 mt-4 text-xs font-medium text-center text-white transition-colors duration-200 bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-700">
+                    Sign Up
+                </a>
+            </Link>
+        </div>
     );
 }
 
 JoinPage.getLayout = function getLayout(page: ReactElement) {
-    return <BaseLayout title={data.pageTitle}>{page}</BaseLayout>;
+    return <BaseLayout title="Join">{page}</BaseLayout>;
 };
 
 export default JoinPage;
