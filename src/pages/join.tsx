@@ -23,7 +23,7 @@ function JoinPage() {
             <div className="bg-hero bg-cover h-64 rounded-md shadow-sm"></div>
 
 
-            <div className="my-8">
+            <div className="my-20">
                 <h2 className="text-xl mb-4">Explore the Most Popular Apps</h2>
                 <div className="grid grid-cols-2 gap-4">
                     <div className=" p-4 rounded-md shadow-sm">
@@ -38,33 +38,35 @@ function JoinPage() {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
                     <div className=" p-4 rounded-md shadow-sm">
-                        <p>Our platform prioritizes your privacy. All apps are open source, which means you know exactly what you're running. There are no intrusive ads or trackers, and we don't sell your data. It's a level of privacy that's unparalleled elsewhere.</p>
+                        <p>Our platform prioritizes your privacy. All apps are open source, which means you know exactly what you&aposre running. There are no intrusive ads or trackers, and we don&apost sell your data. It&aposs a level of privacy that&aposs unparalleled elsewhere.</p>
                     </div>
                 </div>
             </div>
 
-            <h2 className="text-xl">Amazing Ease of Use</h2>
-            <div className="grid grid-cols-2 gap-4">
-                <p>Unlike other open source platforms, our apps are incredibly user-friendly. Running an app is as easy as clicking a button. No need for complex setup processes or technical know-how. It's open source made easy.</p>
-                <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+            <div className="my-8">
+                <h2 className="text-xl">Amazing Ease of Use</h2>
+                <div className="grid grid-cols-2 gap-4">
+                    <p>Unlike other open source platforms, our apps are incredibly user-friendly. Running an app is as easy as clicking a button. No need for complex setup processes or technical know-how. It&aposs open source made easy.</p>
+                    <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
+                </div>
             </div>
 
             <h2 className="text-xl">Your Apps, Your Rules</h2>
             <div className="grid grid-cols-2 gap-4">
                 <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
-                <p>With Open Source Platform, you have the ultimate freedom. Want to modify an app to better suit your needs? Go ahead. With our in-browser code editor, you can customize your experience to your heart's content.</p>
+                <p>With Open Source Platform, you have the ultimate freedom. Want to modify an app to better suit your needs? Go ahead. With our in-browser code editor, you can customize your experience to your heart&aposs content.</p>
             </div>
 
             <h2 className="text-xl">Community Like Nowhere Else</h2>
             <div className="grid grid-cols-2 gap-4">
-                <p>Join a community of developers and users who are passionate about open source. Get support, request tailor-made features, help others, and earn rewards. It's a collaborative environment like nowhere else.</p>
+                <p>Join a community of developers and users who are passionate about open source. Get support, request tailor-made features, help others, and earn rewards. It&aposs a collaborative environment like nowhere else.</p>
                 <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
             </div>
 
             <h2 className="text-xl">Get Started as a Developer or Designer</h2>
             <div className="grid grid-cols-2 gap-4">
                 <div className="bg-purple-500 h-64 rounded-md shadow-sm"></div>
-                <p>Whether you're a seasoned developer or just starting out, Open Source Platform provides unrivaled tools to help you create and share your work. Start your journey today.</p>
+                <p>Whether you&aposre a seasoned developer or just starting out, Open Source Platform provides unrivaled tools to help you create and share your work. Start your journey today.</p>
             </div>
 
             <div className="flex justify-center">
@@ -75,7 +77,7 @@ function JoinPage() {
                 </Link>
             </div>
 
-            <div className='mt-20'>
+            <div className="mt-20">
                 <Footer />
 
             </div>
