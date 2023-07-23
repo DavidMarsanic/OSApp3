@@ -1,7 +1,7 @@
 import { data } from '@/data/info';
 import UnauthenticatedLayout from '@/layouts/UnauthenticatedLayout';
 import { useSignInEmailPassword } from '@nhost/react';
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 
