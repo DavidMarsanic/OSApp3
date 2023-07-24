@@ -9,10 +9,10 @@ function JoinPage() {
     return (
         <div className="space-y-8 text-white">
 
-            <div className="flex flex-col items-center justify-center space-y-4 h-screen">
+            <div className="flex flex-col items-center justify-center space-y-4">
 
                 <div className="mb-20 text-center">
-                    <Image src="/logo.svg" alt="Logo" width="250" height="125" />
+                    <Image src="/logo.svg" alt="Logo" width="400" height="200" />
 
                     <div className="mt-4">
                         <AnimatedHeading />

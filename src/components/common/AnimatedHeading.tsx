@@ -23,11 +23,11 @@ const AnimatedHeading = () => {
     return (
         <div className="flex items-center justify-center">
             <div className="max-w-2xl flex items-center justify-center">
-                <h1 className="text-6xl font-bold flex">
+                <h1 className="text-8xl font-bold flex">
                     <span className="text-purple-600">
                         Bright
                     </span>
-                    <span className="text-6xl font-bold" style={{ animation: 'colorchange 10s infinite' }}>
+                    <span className="text-8xl font-bold" style={{ animation: 'colorchange 10s infinite' }}>
                         en
                     </span>
                     <span className="text-blue-500">
