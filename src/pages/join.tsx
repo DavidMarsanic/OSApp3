@@ -2,10 +2,18 @@ import BaseLayout from '@/layouts/BaseLayout';
 import { ReactElement } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/common/Footer';
+import AnimatedHeading from '../components/common/AnimatedHeading';
 
 function JoinPage() {
     return (
         <div className="p-4 space-y-8 text-white">
+
+            <div className="flex justify-center items-center min-h-screen">
+                <AnimatedHeading />
+
+
+
+            </div>
             <div className="flex flex-col items-center space-y-4">
                 <h1 className="text-4xl font-bold mb-10 ">Become a Part of the Future</h1>
                 <h2 className="text-2xl">

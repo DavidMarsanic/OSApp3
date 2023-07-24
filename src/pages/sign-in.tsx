@@ -1,30 +1,18 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { useSignInEmailPassword, useAuthenticationStatus } from '@nhost/react';
 import UnauthenticatedLayout from '@/layouts/UnauthenticatedLayout';
 import { useRouter } from 'next/router';
-
-type SignInFormValues = {
-  email: string;
-  password: string;
-};
 
 export function SignInPage() {
   const { signInEmailPassword, isLoading, isError, error } = useSignInEmailPassword();
   const { isAuthenticated } = useAuthenticationStatus();
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm<SignInFormValues>({
-    reValidateMode: 'onSubmit',
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  async function onSubmit(data: SignInFormValues) {
-    const { email, password } = data;
-
+  async function onSubmit(e) {
+    e.preventDefault();
     try {
       await signInEmailPassword(email, password);
       if (isAuthenticated) {
@@ -42,7 +30,7 @@ export function SignInPage() {
     >
       <div>
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={onSubmit}
           className="grid w-full max-w-xs grid-flow-row gap-6 py-8 mx-auto rounded-md"
         >
           <div className="grid grid-flow-row gap-2">
@@ -54,7 +42,6 @@ export function SignInPage() {
             </label>
 
             <input
-              {...register('email')}
               className="bg-input text-list w-full px-2 py-3 text-sm rounded-md"
               id="email"
               placeholder="Email"
@@ -64,6 +51,8 @@ export function SignInPage() {
               spellCheck="false"
               autoCapitalize="none"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -76,7 +65,6 @@ export function SignInPage() {
             </label>
 
             <input
-              {...register('password')}
               className="bg-input text-list w-full px-2 py-3 text-sm rounded-md"
               id="password"
               placeholder="Password"
@@ -87,6 +75,8 @@ export function SignInPage() {
               autoCapitalize="none"
               autoComplete="false"
               type="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
