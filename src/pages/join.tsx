@@ -9,17 +9,22 @@ function JoinPage() {
         <div className="p-4 space-y-8 text-white">
 
             <div className="flex flex-col items-center space-y-4">
-                <AnimatedHeading />
+
+                <div className="my-20">
+                    <AnimatedHeading />
+
+                </div>
+
                 <h2 className="text-2xl">
                     Become a part of the future
                 </h2>
-                <div className="bg-hero bg-cover bg-purple-500 h-96 w-full rounded-md shadow-sm"></div>
-
                 <Link href="/sign-up">
                     <a className="inline-block px-6 py-3 text-base font-medium text-center text-white transition-colors duration-200 bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-700 mt-4">
                         Sign Up
                     </a>
                 </Link>
+
+
             </div>
 
             <div className="bg-hero bg-cover h-64 rounded-md shadow-sm"></div>
