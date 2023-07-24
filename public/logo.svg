@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:blue;stop-opacity:1" /> <!-- Lightened the blue -->
+      <stop offset="100%" style="stop-color:deepskyblue;stop-opacity:1" /> <!-- Even lighter blue -->
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:magenta;stop-opacity:1" /> <!-- Swapped colors -->
+      <stop offset="100%" style="stop-color:darkmagenta;stop-opacity:1" /> <!-- Swapped colors -->
+    </linearGradient>
+  </defs>
+  <text x="50" y="70" fill="url(#purpleGradient)" style="font: bold 60px monospace;">&lt;</text> <!-- Swapped fill -->
+  <text x="100" y="70" fill="url(#blueGradient)" style="font: bold 60px monospace;">&gt;</text> <!-- Swapped fill -->
+</svg>

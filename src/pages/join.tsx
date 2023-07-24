@@ -11,6 +11,7 @@ function JoinPage() {
             <div className="flex flex-col items-center space-y-4">
 
                 <div className="my-20">
+
                     <AnimatedHeading />
 
                 </div>

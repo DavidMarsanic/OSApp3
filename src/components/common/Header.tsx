@@ -2,6 +2,7 @@ import { useAuthenticationStatus, useSignOut } from '@nhost/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { twMerge } from 'tailwind-merge';
+import Image from 'next/image';
 
 export function Header() {
   const { asPath } = useRouter();
@@ -12,11 +13,10 @@ export function Header() {
     <header className="sticky border-b bg-header border-b-brd">
       <div className="flex flex-row max-w-5xl p-4 mx-auto place-content-between">
         <Link href="/" passHref>
-          <a className="self-center font-medium text-white text-md hover:underline">
-            OSApp
+          <a>
+            <img src="/logo.svg" alt="Logo" width="80" height="30" />
           </a>
         </Link>
-
         <nav
           className="self-center hidden md:block"
           aria-label="Main navigation"
