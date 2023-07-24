@@ -8,16 +8,10 @@ function JoinPage() {
     return (
         <div className="p-4 space-y-8 text-white">
 
-            <div className="flex justify-center items-center min-h-screen">
-                <AnimatedHeading />
-
-
-
-            </div>
             <div className="flex flex-col items-center space-y-4">
-                <h1 className="text-4xl font-bold mb-10 ">Become a Part of the Future</h1>
+                <AnimatedHeading />
                 <h2 className="text-2xl">
-                    We are changing how software is made and used. Join us on this journey
+                    Become a part of the future
                 </h2>
                 <div className="bg-hero bg-cover bg-purple-500 h-96 w-full rounded-md shadow-sm"></div>
 
