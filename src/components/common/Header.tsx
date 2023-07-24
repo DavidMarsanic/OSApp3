@@ -11,11 +11,9 @@ export function Header() {
 
   return (
     <header className="sticky border-b bg-header border-b-brd">
-      <div className="flex flex-row max-w-5xl p-4 mx-auto place-content-between">
+      <div className="flex items-center flex-row max-w-5xl mx-auto place-content-between">
         <Link href="/" passHref>
-          <a>
-            <img src="/logo.svg" alt="Logo" width="80" height="30" />
-          </a>
+          <Image src="/logo.svg" alt="Logo" width="160" height="80" />
         </Link>
         <nav
           className="self-center hidden md:block"
@@ -73,7 +71,7 @@ export function Header() {
             <div className="grid items-center grid-flow-col gap-2 md:gap-4">
               <button
                 onClick={signOut}
-                className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list"
+                className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list"
               >
                 Sign Out
               </button>
@@ -83,13 +81,12 @@ export function Header() {
           {!isAuthenticated && !isLoading && (
             <div className="grid items-center grid-flow-col gap-2 md:gap-4">
               <Link href="/sign-in" passHref>
-                <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list">
+                <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list">
                   Sign In
                 </a>
               </Link>
               <Link href="/sign-up" passHref>
-                <a className="flex items-center self-end justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
-
+                <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
                   Sign Up
                 </a>
               </Link>
