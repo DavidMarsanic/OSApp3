@@ -13,11 +13,8 @@ export function Header() {
     <header className="sticky border-b bg-header border-b-brd">
       <div className="flex items-center flex-row max-w-5xl mx-auto place-content-between">
         <Link href="/" passHref>
-          <a className="transform transition-transform hover:scale-110">
-            <Image src="/logo.svg" alt="Logo" width="160" height="80" />
-          </a>
+          <Image src="/logo.svg" alt="Logo" width="160" height="80" />
         </Link>
-
         <nav
           className="self-center hidden md:block"
           aria-label="Main navigation"
@@ -69,7 +66,6 @@ export function Header() {
           </ul>
         </nav>
 
-        {/*
         <div className="flex">
           {isAuthenticated && (
             <div className="grid items-center grid-flow-col gap-2 md:gap-4">
@@ -82,30 +78,28 @@ export function Header() {
             </div>
           )}
 
+          {!isAuthenticated && !isLoading && (
+            <div className="grid items-center grid-flow-col gap-2 md:gap-4">
+              <Link href="/sign-in" passHref>
+                <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list">
+                  Sign In
+                </a>
+              </Link>
+
+              {/*
+              <Link href="/sign-up" passHref>
+                <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
+                  Sign Up
+                </a>
+              </Link>
           */}
 
+            </div>
+          )}
 
-        {!isAuthenticated && !isLoading && (
-          <div className="grid items-center grid-flow-col gap-2 md:gap-4">
-            <Link href="/sign-in" passHref>
-              <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-list hover:border-white hover:text-white border-list">
-                Sign In
-              </a>
-            </Link>
-
-            {/*
-            <Link href="/sign-up" passHref>
-              <a className="flex items-center justify-center w-full px-2 py-1 text-xs transition-colors duration-200 border rounded-md text-purple-600 border-purple-600 hover:border-purple-400 hover:text-purple-400">
-                Sign Up
-              </a>
-            </Link>
-        */}
-
-          </div>
-        )}
-
-        {isLoading && <div className="w-16" />}
+          {isLoading && <div className="w-16" />}
+        </div>
       </div>
-    </header >
+    </header>
   );
 }
