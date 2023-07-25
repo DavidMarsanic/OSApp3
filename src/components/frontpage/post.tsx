@@ -1,20 +1,21 @@
-import { FaComment, FaRegSave, FaArrowUp } from 'react-icons/fa';
+// Post.tsx
+import { FaComment, FaRegHeart, FaRegBookmark } from 'react-icons/fa';
 
 function Post({ post }) {
     let borderColor, textColor;
 
-    switch (post.icon) {
-        case '#':
+    switch (post.type) {
+        case 'topic':
+            borderColor = 'border-purple-500';
+            textColor = 'text-purple-500';
+            break;
+        case 'app':
             borderColor = 'border-blue-500';
             textColor = 'text-blue-500';
             break;
-        case '@':
-            borderColor = 'border-green-500';
-            textColor = 'text-green-500';
-            break;
-        case '<>':
-            borderColor = 'border-red-500';
-            textColor = 'text-red-500';
+        case 'component':
+            borderColor = 'border-yellow-500';
+            textColor = 'text-yellow-500';
             break;
         default:
             borderColor = 'border-white';
@@ -22,35 +23,28 @@ function Post({ post }) {
     }
 
     return (
-        <div className="bg-gray-800 text-white p-6 my-4 rounded-md shadow-md">
+        <div className="bg-gray-800 p-4 rounded-lg my-4">
             <div className="flex justify-between items-center">
-                <div className="text-sm text-gray-400">
-                    Posted by {post.user} in
-                    <span className={`inline-block align-middle ${borderColor} ${textColor} rounded px-2 py-1 ml-1`}>{post.icon} {post.community}</span>
+                <div className="flex items-center">
+                    <span className="text-sm">Posted by {post.user} in</span>
+                    <span className={`mx-1 px-2 py-1 rounded-full ${borderColor} ${textColor} border text-sm inline-flex items-center`}>
+                        {post.icon} {post.community}
+                    </span>
                 </div>
-                <div className="text-sm text-gray-400">
-                    <span className="inline-block align-middle border border-white text-white rounded px-2 py-1 ml-1">{post.reason}</span>
-                </div>
+                <span className="px-2 py-1 rounded-full border border-white text-white text-sm">{post.reason}</span>
             </div>
-            <div className="mt-2">
-                <h2 className="text-xl font-bold">{post.title}</h2>
-                <p className="mt-4">{post.previewText}</p>
-            </div>
-            <div className="flex justify-between items-center mt-6">
-                <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2">
-                        <FaComment />
-                        <span>{post.comments}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <FaRegSave />
-                        <span>Save</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <FaArrowUp />
-                        <span>Upvote</span>
-                    </div>
+            <h2 className="text-white text-lg mt-2">{post.title}</h2>
+            <p className="text-gray-400 mt-2">{post.previewText}</p>
+            <div className="flex items-center mt-4">
+                <div className="flex items-center text-gray-400 text-sm">
+                    <FaComment className="mr-1" /> {post.comments}
                 </div>
+                <button className="flex items-center text-gray-400 text-sm ml-4">
+                    <FaRegHeart className="mr-1" /> {post.likes}
+                </button>
+                <button className="flex items-center text-gray-400 text-sm ml-4">
+                    <FaRegBookmark className="mr-1" /> {post.saves}
+                </button>
             </div>
         </div>
     );
