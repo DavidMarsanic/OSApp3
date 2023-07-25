@@ -13,8 +13,11 @@ export function Header() {
     <header className="sticky border-b bg-header border-b-brd">
       <div className="flex items-center flex-row max-w-5xl mx-auto place-content-between">
         <Link href="/" passHref>
-          <Image src="/logo.svg" alt="Logo" width="160" height="80" />
+          <a className="transform transition-transform hover:scale-110">
+            <Image src="/logo.svg" alt="Logo" width="160" height="80" />
+          </a>
         </Link>
+
         <nav
           className="self-center hidden md:block"
           aria-label="Main navigation"
