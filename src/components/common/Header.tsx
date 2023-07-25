@@ -27,18 +27,18 @@ export function Header() {
               )}
             >
               <Link href="/" passHref>
-                <a className="px-2">Home</a>
+                <a className="px-2">Enterprise</a>
               </Link>
             </li>
 
             <li
               className={twMerge(
                 'hover:text-white',
-                asPath === '/speakers' && 'text-white',
+                asPath === '/developers' && 'text-white',
               )}
             >
-              <Link href="/speakers" passHref>
-                <a className="px-2">Speakers</a>
+              <Link href="/developers" passHref>
+                <a className="px-2">Developers</a>
               </Link>
             </li>
 
@@ -49,7 +49,7 @@ export function Header() {
               )}
             >
               <Link href="/talks" passHref>
-                <a className="px-2">Talks</a>
+                <a className="px-2">Our Mission</a>
               </Link>
             </li>
 
