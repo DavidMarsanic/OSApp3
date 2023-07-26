@@ -23,9 +23,9 @@ function Post({ post }) {
     }
 
     return (
-        <div className="bg-gray-800 p-4 rounded-lg my-4">
-            <div className="flex justify-between items-center">
-                <div className="flex items-center">
+        <div className="bg-gray-800 p-4 rounded-lg my-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                <div className="flex items-center mb-2 sm:mb-0">
                     <span className="text-sm">Posted by {post.user} in</span>
                     <span className={`mx-1 px-2 py-1 rounded-full ${borderColor} ${textColor} border text-sm inline-flex items-center`}>
                         {post.icon} {post.community}
@@ -46,6 +46,9 @@ function Post({ post }) {
                 <button className="flex items-center text-gray-400 text-sm ml-4">
                     <FaRegBookmark className="mr-1" /> {post.saves}
                 </button>
+            </div>
+            <div className="mt-4">
+                {/* <p className="text-gray-400">{post.topComment}</p> */}
             </div>
         </div>
     );
