@@ -2,7 +2,7 @@ import BaseLayout from '@/layouts/BaseLayout';
 import { ReactElement } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/common/Footer';
-import AnimatedHeading from '../components/common/AnimatedHeading';
+import AnimatedHeading from '../common/AnimatedHeading';
 import Image from 'next/image';
 
 function JoinPage() {

@@ -1,10 +1,10 @@
-// IndexPage.tsx
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthenticationStatus } from '@nhost/react';
 import { useRouter } from 'next/router';
 import BaseLayout from '@/layouts/BaseLayout';
 import Post from '../components/frontpage/post';
 import { FaCode, FaHashtag, FaAt } from 'react-icons/fa';
+import JoinPage from '../components/frontpage/join';
 
 // Updated placeholder data
 const placeholderPosts = [
@@ -14,28 +14,37 @@ const placeholderPosts = [
   // Add more placeholder data as needed
 ];
 
-
 function IndexPage() {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      router.push('/join');
-    }
-  }, [isAuthenticated, isLoading, router]);
+  // Add a new state to track the initial check
+  const [initialCheck, setInitialCheck] = useState(false);
 
-  if (isLoading) {
+  useEffect(() => {
+    if (!isLoading) {
+      // When the check is done, update the state
+      setInitialCheck(true);
+    }
+  }, [isLoading]);
+
+  // Don't render anything until the initial check is done
+  if (!initialCheck) {
     return <div>Loading...</div>; // or your custom loading component
   }
 
+  // If authenticated, render the PageContent, otherwise render the JoinPage
   return (
     <BaseLayout>
-      <div className="feed">
-        {placeholderPosts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </div>
+      {isAuthenticated ? (
+        <div className="feed">
+          {placeholderPosts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </div>
+      ) : (
+        <JoinPage />
+      )}
     </BaseLayout>
   );
 }
