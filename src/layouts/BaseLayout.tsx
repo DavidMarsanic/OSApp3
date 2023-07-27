@@ -1,4 +1,5 @@
 import { Header } from '@/components/common/Header';
+import { Loader } from '@/components/common/Loader';
 import Head from 'next/head';
 import { DetailedHTMLProps, HTMLProps } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -16,12 +17,17 @@ export interface BaseLayoutProps
     HTMLProps<HTMLDivElement>,
     HTMLDivElement
   >;
+  /**
+   * Whether the page is in a loading state.
+   */
+  isLoading?: boolean;
 }
 
 export default function BaseLayout({
   title,
   children,
   mainContainerProps,
+  isLoading = false,
 }: BaseLayoutProps) {
   return (
     <div className="min-h-screen bg-grid bg-header">
@@ -41,10 +47,14 @@ export default function BaseLayout({
             mainContainerProps?.className,
           )}
         >
-          {children}
+          {isLoading ? (
+            <div className="flex justify-center items-center min-h-screen">
+              <Loader />
+            </div>
+          ) : (
+            children
+          )}
         </main>
-
-
       </div>
     </div>
   );
