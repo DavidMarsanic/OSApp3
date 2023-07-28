@@ -1,5 +1,5 @@
-// Post.tsx
 import { FaComment, FaRegHeart, FaRegBookmark } from 'react-icons/fa';
+import Image from 'next/image';
 
 function Post({ post }) {
     let borderColor, textColor;
@@ -34,7 +34,13 @@ function Post({ post }) {
                 <span className="px-2 py-1 rounded-full border border-white text-white text-sm">{post.reason}</span>
             </div>
             <h2 className="text-white text-xl leading-normal mb-2">{post.title}</h2>
-            <img src={post.image} alt={post.title} className="w-full h-64 object-cover mb-2" />
+            <Image
+                src={post.image}
+                alt={post.title}
+                width={500} // Replace with your desired width
+                height={300} // Replace with your desired height
+                className="object-cover mb-2"
+            />
             <p className="text-gray-400 text-lg leading-loose mb-4">{post.previewText}</p>
             <div className="flex items-center">
                 <div className="flex items-center text-gray-400 text-sm">

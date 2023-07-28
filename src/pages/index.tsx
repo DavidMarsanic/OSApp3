@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthenticationStatus } from '@nhost/react';
-import { useRouter } from 'next/router';
 import BaseLayout from '@/layouts/BaseLayout';
 import Post from '../components/frontpage/post';
 import { FaCode, FaHashtag, FaAt } from 'react-icons/fa';
@@ -16,7 +15,6 @@ const placeholderPosts = [
 
 function IndexPage() {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
-  const router = useRouter();
 
   // Add a new state to track the initial check
   const [initialCheck, setInitialCheck] = useState(false);
