@@ -10,6 +10,7 @@ function SpeakersPage() {
     <div className="grid grid-flow-row gap-2 py-4">
 
 
+
       {isAuthenticated ? (
         <div className="w-full max-w-lg py-10 mx-auto">
           <h1 className="text-dim pb-8 text-3xl font-medium leading-none text-center">
